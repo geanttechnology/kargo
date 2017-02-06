@@ -14,6 +14,8 @@
   -v {{ dir }}:{{ dir }}:ro \
   {% endfor -%}
   -v /sys:/sys:ro \
+  -v /lib/modules:/lib/modules:ro \
+  -v /dev:/dev \
   -v {{ docker_daemon_graph }}:/var/lib/docker:rw \
   -v /var/lib/kubelet:/var/lib/kubelet:shared \
   -v /var/run:/var/run:rw \
